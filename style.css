@@ -1,0 +1,117 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    background-color: #fff8f0;
+    color: #333;
+    padding: 20px;
+}
+
+h1 {
+    color: #ff69b4;
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #ffb6c1;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ff69b4;
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 80px;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: #fff8f0;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #ffb6c1;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.modal-content.scrollable {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.close {
+    color: #ff69b4;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ff1493;
+}
+
+img, video {
+    margin: 10px;
+    border-radius: 12px;
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+#toggle-music {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #ffb6c1;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+#toggle-music:hover {
+    background-color: #ff69b4;
+    color: white;
+}
+#page3 {
+    background-image: url("static/images/photo_bg.jpg");
+    background-size: cover;          /* Cover the entire section */
+    background-position: center;     /* Center the image */
+    background-repeat: no-repeat;    /* Do not repeat */
+    background-attachment: fixed;    /* Optional: stays fixed while scrolling */
+    color: white;                    /* Adjust text color for visibility if needed */
+    padding: 20px;                   /* Add padding if content touches edges */
+}
+@media (max-width: 768px) {
+    #page3 {
+        background-attachment: scroll;   /* Prevents jumpy behavior on mobile */
+        background-position: center;
+        padding: 15px;                   /* Slightly reduced padding for small screens */
+    }
+    
+    #page3 h2 {
+        font-size: 1.5rem;               /* Adjust heading size for readability */
+        text-align: center;              /* Center heading text */
+    }
+
+    #page3 p, #page3 button {
+        font-size: 1rem;                 /* Adjust paragraph and button text for clarity */
+        text-align: center;              /* Center content */
+    }
+}

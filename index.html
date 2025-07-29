@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sonia 💛 Girlfriend's Day</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body, html {
+    margin: 0; padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    background: linear-gradient(135deg, #ffe6f0, #ffe0ec);
+    overflow-x: hidden;
+}
+.page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+.page.active {
+    display: flex;
+    animation: fadeIn 1s;
+}
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+h1, h2 {
+    font-family: 'Pacifico', cursive;
+    color: #ff4081;
+    margin: 20px;
+}
+button {
+    background: #ff4081;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 10px;
+}
+button:hover { background: #e91e63; }
+.note {
+    background: #f5f5dc;
+    color: #4b3832;
+    font-family: 'Pacifico', cursive;
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 700px;
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-align: left;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+.polaroid {
+    background: white;
+    padding: 10px 10px 25px 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 200px;
+}
+.polaroid img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.polaroid p {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #555;
+}
+textarea {
+    width: 90%;
+    max-width: 500px;
+    height: 80px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #ff4081;
+    resize: vertical;
+    margin: 10px 0;
+}
+#custom-cursor {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    z-index: 9999;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Love_Heart_symbol.svg/1024px-Love_Heart_symbol.svg.png') no-repeat center center;
+    background-size: contain;
+    mix-blend-mode: difference;
+}
+video {
+    border-radius: 12px;
+    margin: 20px 0;
+    max-width: 90%;
+    height: auto;
+}
+</style>
+</head>
+<body>
+
+<div id="custom-cursor"></div>
+
+<!-- Background Music -->
+<audio id="bg-music"
+src="/static/music/Kauai%2045%20%26%20Sweet%20Cocoa%20-%20Just%20the%20Two%20of%20Us%20(Lyric%20Video)%20-%20Love%20Life%20Lyrics.mp3"
+loop></audio>
+<button id="toggle-music">🔈 Play Music</button>
+
+
+<!-- Page 1: Welcome -->
+<div id="page1" class="page active">
+    <h1>💛 Happy Girlfriend's Day my love 💛</h1>
+    <p>You are my joy, my comfort, my forever. Thank you for being you 💖</p>
+    <button onclick="nextPage()">Next 💌</button>
+</div>
+
+<!-- Page 2: Note + Video -->
+<div id="page2" class="page">
+    <h2>💌 A Letter for You 💌</h2>
+    <div class="note">
+        Sonia, your kindness, your strength, and the way you care for me love me this much makes me fall for you even more every day. You are not just my girlfriend, but my best friend, my comfort, my inspiration, my everything and the reason behind so many of my smiles. I want you to always remember that no matter what happens, I am here for you, proud of you, and I will support your dreams forever. I love the way you make the smallest moments feel special, the way your eyes light up when you talk about what you love, and the way you believe in us no matter what. You are so precious to me, and I promise to stand by you, make you laugh, and love you endlessly, Sonia 💖<br><br>
+        I love you my sonia and i'll always,<br>Forever yours<br>Rohan 💌
+     </div>
+    <video id="love-video" autoplay muted loop controls>
+        <source src="/static/videos/soniavideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <button onclick="toggleVideoSound()">🔈 Video Sound</button><br>
+    <button onclick="prevPage()">⬅️ Back</button>
+    <button onclick="nextPage()">Next 📸</button>
+</div>
+
+<!-- Page 3: Photos -->
+<div id="page3" class="page">
+    <h2>📸 How Perfection Looks Like ✨</h2>
+    <div class="gallery">
+        <div class="polaroid"><img src="/static/images/photo1.jpg" alt=" 💌 "><p> 💌 </p></div>
+        <div class="polaroid"><img src="/static/images/photo2.jpg" alt=" 💗 "><p> 💗 </p></div>
+        <div class="polaroid"><img src="/static/images/photo3.jpg" alt=" 🩷 "><p> 🩷 </p></div>
+        <div class="polaroid"><img src="/static/images/photo4.jpg" alt=" ✨ "><p> ✨ </p></div>
+        <div class="polaroid"><img src="/static/images/photo5.jpg" alt=" 🌸 "><p> 🌸 </p></div>
+    </div>
+    <button onclick="prevPage()">⬅️ Back</button>
+    <button onclick="nextPage()">Next 💭</button>
+</div>
+
+<!-- Page 4: Questions + Download Button -->
+<div id="page4" class="page">
+    <h2>💭 Just a Few Questions 💭</h2>
+    <p>1️⃣ What does a perfect day with me look like to you? 🥰</p>
+    <textarea id="q1" placeholder="Your answer..."></textarea>
+    <p>2️⃣ What do you admire most in our relationship? 💛</p>
+    <textarea id="q2" placeholder="Your answer..."></textarea>
+    <p>3️⃣ What memory with me always makes you smile? 😊</p>
+    <textarea id="q3" placeholder="Your answer..."></textarea>
+    <p>4️⃣ What song reminds you of us? 🎶</p>
+    <textarea id="q4" placeholder="Your answer..."></textarea>
+    <p>5️⃣ Will you be with me forever? 💖</p>
+    <textarea id="q5" placeholder="Your answer..."></textarea><br>
+    <button onclick="saveAnswers()">💌 Save My Answers</button><br>
+    <button onclick="prevPage()">⬅️ Back</button>
+</div>
+
+<script>
+// Page navigation
+let currentPage = 1;
+function showPage(num) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page' + num).classList.add('active');
+}
+function nextPage() {
+    currentPage = Math.min(currentPage + 1, 4);
+    showPage(currentPage);
+}
+function prevPage() {
+    currentPage = Math.max(currentPage - 1, 1);
+    showPage(currentPage);
+}
+
+// Cursor
+const cursor = document.getElementById('custom-cursor');
+document.addEventListener('mousemove', e => {
+    cursor.style.left = e.pageX + 'px';
+    cursor.style.top = e.pageY + 'px';
+});
+
+// Music Control
+const music = document.getElementById("bg-music");
+const toggleBtn = document.getElementById("toggle-music");
+let musicAllowed = false;
+document.body.addEventListener("click", () => {
+    if (!musicAllowed) {
+        music.play().catch(()=>{});
+        toggleBtn.textContent = "🔇 Mute Music";
+        musicAllowed = true;
+    }
+});
+toggleBtn.addEventListener("click", () => {
+    if (music.paused) {
+        music.play().catch(()=>{});
+        toggleBtn.textContent = "🔇 Mute Music";
+    } else {
+        music.pause();
+        toggleBtn.textContent = "🔈 Play Music";
+    }
+});
+
+// Video mute/unmute
+const loveVideo = document.getElementById("love-video");
+function toggleVideoSound() {
+    if (loveVideo.muted) {
+        loveVideo.muted = false;
+        music.pause();
+    } else {
+        loveVideo.muted = true;
+        music.play().catch(()=>{});
+    }
+}
+
+// Save Answers
+function saveAnswers() {
+    const q1 = document.getElementById("q1").value.trim();
+    const q2 = document.getElementById("q2").value.trim();
+    const q3 = document.getElementById("q3").value.trim();
+    const q4 = document.getElementById("q4").value.trim();
+    const q5 = document.getElementById("q5").value.trim();
+    const content = `Sonia's Answers 💛
+
+1️⃣ What does a perfect day with me look like to you?
+${q1}
+
+2️⃣ What do you admire most in our relationship?
+${q2}
+
+3️⃣ What memory with me always makes you smile?
+${q3}
+
+4️⃣ What song reminds you of us?
+${q4}
+
+5️⃣ Will you be with me forever?
+${q5}
+
+💖 Sent with love 💖`;
+
+    const blob = new Blob([content], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "sonias_answers.txt";
+    link.click();
+}
+</script>
+</body>
+</html>
